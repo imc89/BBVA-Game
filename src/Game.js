@@ -3,7 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 // Importa el componente para el semáforo.
 import TrafficLight from './components/TrafficLight/TrafficLight';
-
+// Importa el componente que muestra el puntaje.
+import GameInfo from './components/GameInfo/GameInfo';
 // Importa el archivo de estilos de la aplicación.
 import './App.css';
 
@@ -103,6 +104,13 @@ const Game = () => {
       // Establece el último botón presionado.
       setLastButtonPressed(button);
     } else {
+      //Función de vibración no funcional en iOS debido a restricciones de seguridad
+      if (navigator.vibrate) {
+        // Si el navegador soporta vibración
+        navigator.vibrate(200);  // Vibración de 200 ms
+      } else {
+        console.log("La vibración no es compatible con este dispositivo o navegador.");
+      }
       // Si la luz es roja, solo restablece el puntaje sin cambiar el maxScore.
       setScore(0);
       // Guarda el puntaje restablecido en localStorage.
@@ -192,7 +200,9 @@ const Game = () => {
       <h2>JUGADOR: {userName.toUpperCase()}</h2>
 
       <div className='container-game'>
-     
+        {/* Mostrar el score y el maxScore */}
+        <GameInfo score={score} maxScore={maxScore} />
+
         {/* Componente del semáforo */}
         <TrafficLight isGreenLight={isGreenLight} />
 
@@ -205,7 +215,6 @@ const Game = () => {
           <button onClick={handleExitGame}>Salir</button>
         </div>
       </div>
-    
     </div>
   );
 };
