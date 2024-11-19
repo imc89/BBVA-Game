@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/BBVA-Game/static/css/main.e6c13ad2.css",
-    "main.js": "/BBVA-Game/static/js/main.30a3c30a.js",
+    "main.css": "/BBVA-Game/static/css/main.dc4a5437.css",
+    "main.js": "/BBVA-Game/static/js/main.e816af71.js",
     "static/js/453.892f6b6d.chunk.js": "/BBVA-Game/static/js/453.892f6b6d.chunk.js",
     "index.html": "/BBVA-Game/index.html",
-    "main.e6c13ad2.css.map": "/BBVA-Game/static/css/main.e6c13ad2.css.map",
-    "main.30a3c30a.js.map": "/BBVA-Game/static/js/main.30a3c30a.js.map",
+    "main.dc4a5437.css.map": "/BBVA-Game/static/css/main.dc4a5437.css.map",
+    "main.e816af71.js.map": "/BBVA-Game/static/js/main.e816af71.js.map",
     "453.892f6b6d.chunk.js.map": "/BBVA-Game/static/js/453.892f6b6d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.30a3c30a.js"
+    "static/css/main.dc4a5437.css",
+    "static/js/main.e816af71.js"
   ]
 }
