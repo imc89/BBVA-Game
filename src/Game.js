@@ -5,6 +5,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import TrafficLight from './components/TrafficLight/TrafficLight';
 // Importa el componente que muestra el puntaje.
 import GameInfo from './components/GameInfo/GameInfo';
+// Importa el componente para la reproducción de audio.
+import AudioPlayer from './components/AudioPlayer/AudioPlayer';
 // Importa el archivo de estilos de la aplicación.
 import './App.css';
 
@@ -42,6 +44,8 @@ const Game = () => {
   const [lastButtonPressed, setLastButtonPressed] = useState(null);
   // Estado para controlar si la luz está verde o roja.
   const [isGreenLight, setIsGreenLight] = useState(false);
+  // Estado para saber si el audio está sonando.
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   // Estado para saber si el juego ha comenzado.
   const [hasStarted, setHasStarted] = useState(false);
 
@@ -215,6 +219,15 @@ const Game = () => {
           <button onClick={handleExitGame}>Salir</button>
         </div>
       </div>
+      {/* Componente de reproducción de audio */}
+      <AudioPlayer
+        score={score}
+        isGreenLight={isGreenLight}
+        isPlaying={hasStarted}
+        trafficLightDurationRef={trafficLightDurationRef.current}
+        onPlay={() => setIsAudioPlaying(true)}
+        onStop={() => setIsAudioPlaying(false)}
+      />
     </div>
   );
 };
