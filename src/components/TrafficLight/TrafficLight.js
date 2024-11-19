@@ -1,8 +1,14 @@
 import React from 'react';
-
-const TrafficLight = ({ }) => {
+import './TrafficLight.css'
+const TrafficLight = ({ isGreenLight }) => {
   return (
-    <div>
+    <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+      <div
+        id="light"
+        style={{
+          backgroundColor: isGreenLight ? 'green' : 'red', // Cambia el color del semáforo según el estado.
+        }}
+      ></div>
     </div>
   );
 };
