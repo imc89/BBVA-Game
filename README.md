@@ -1,70 +1,55 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Luz roja - luz verde en ReactJS
+Este es un proyecto de un juego desarrollado en ReactJS, donde el jugador debe presionar los botones correspondientes (izquierda y derecha) según la luz de un semáforo (roja o verde) para obtener puntos. La duración de la luz verde cambia según el puntaje, y el jugador puede competir en un ranking basado en un puntaje máximo.
 
-## Available Scripts
+## Requisitos
+1. **Node.js**: Asegúrate de tener [Node.js](https://nodejs.org/) instalado en tu máquina.
+2. **React**: Este proyecto utiliza ReactJS como framework principal.
 
-In the project directory, you can run:
+## Instalación
+1. Clona este repositorio a tu ordenador:
+```bash
+git clone https://github.com/imc89/BBVA-Game.git
+```
+2. Abre desde terminal el proyecto:
+```bash
+cd BBVA-Game
+```
+3. Instala las dependencias:
+```bash
+npm i 
+```
+4. corre el proyecto en local:
+```bash
+npm run start 
+```
 
-### `npm start`
+## Web online de la aplicación
+```bash
+https://imc89.github.io/BBVA-Game/ 
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Estructura del Proyecto
+Este proyecto está compuesto por los siguientes archivos principales:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **`App.js`**: El archivo principal que gestiona las rutas de la aplicación.
+- **`Home.js`**: Página de inicio donde el jugador ingresa su nombre, puede ver el ranking de puntuaciones e iniciar el juego.
+- **`Game.js`**: Página del juego, donde el jugador interactúa con el semáforo ganando puntuación.
+- **Componentes**:
+  - **`TrafficLight.js`**: Muestra el semáforo (rojo o verde).
+  - **`GameInfo.js`**: Muestra la puntuación actual y el puntaje máximo.
+  - **`RankingTable.js`**: Muestra la tabla de clasificación de los jugadores con las puntuaciones más altas.
+  - **`AudioPlayer.js`**: Reproduce el audio durante el juego y ajusta su velocidad según la puntuación.
 
-### `npm test`
+## Persistencia de Datos
+- Los datos del jugador, como el nombre, el puntaje actual y el puntaje máximo, se almacenan en `localStorage`. Esto permite que los jugadores mantengan su puntaje incluso si recargan la página o cierran el navegador.
+- Los puntajes se mantienen mientras el jugador no cambie su nombre.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Conflictos con Navegadores y Dependencias
+### Problemas de Audio en Safari
+**Safari** (especialmente en macOS y iOS) tiene ciertos problemas conocidos relacionados con la reproducción de audio en aplicaciones web. En algunos casos, el audio puede no reproducirse correctamente o no se ajusta bien al cambiar la velocidad de reproducción (playback rate). Esto se debe a las restricciones de Safari sobre la reproducción automática de medios y la gestión del audio en segundo plano.
+### Problemas con vibración en iOS 
+En iOS, Apple restringe el uso de la vibración en sitios web por razones de seguridad y privacidad, impidiendo que las páginas activen esta función sin el consentimiento explícito del usuario. Esta medida forma parte del enfoque de Apple para limitar la interacción intrusiva de las webs con el dispositivo, protegiendo así la experiencia y el control del usuario. Siendo solo posible ejecutar este tipo de eventos a través de botones o interacciones directas del usuario.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Recomendación:
+- **Google Chrome** y **Mozilla Firefox** funcionan mucho mejor con la funcionalidad de audio y el ajuste de la velocidad en el juego. Si encuentras problemas de audio en Safari, te recomendamos probar el juego en uno de estos navegadores para una experiencia óptima.
