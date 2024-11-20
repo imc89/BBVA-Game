@@ -34,7 +34,7 @@ Este proyecto está compuesto por los siguientes archivos principales:
 
 - **`App.js`**: El archivo principal que gestiona las rutas de la aplicación.
 - **`Home.js`**: Página de inicio donde el jugador ingresa su nombre, puede ver el ranking de puntuaciones e iniciar el juego.
-- **`Game.js`**: Página del juego, donde el jugador interactúa con el semáforo ganando puntuación.
+- **`Game.js`**: Página del juego, donde el jugador interactúa con el semáforo ganando puntuación, se puede usar las teclas derecha e izquierda del teclado en lugar de los botones. Para ganar puntuación el jugador deberá moverse solo con luz verde pulsando derecha izquierda alternativamente.
 - **Componentes**:
   - **`TrafficLight.js`**: Muestra el semáforo (rojo o verde).
   - **`GameInfo.js`**: Muestra la puntuación actual y el puntaje máximo.
